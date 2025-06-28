@@ -360,4 +360,3 @@ if __name__ == '__main__':
     # plt.grid(axis="y")
     plt.savefig("./result/introduction-norm.png", dpi=300, bbox_inches='tight')
     plt.show()
-

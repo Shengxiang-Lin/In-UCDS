@@ -273,37 +273,7 @@ class myDatasetNew():
                 result.extend([[user, active_user] for active_user in self.similar_users[user][:self.neighbor_num]])
         return torch.LongTensor(result)
 
-    def get_most_similar_active_user_mmd(self, users: torch.LongTensor):
-        active_samples = []
-        inactive_samples = []
-        for user in users:
-            user = int(user)
-            if user in self.inactive_users:
-                inactive_samples.append(user)
-                active_samples.append(deepcopy(self.similar_users[user][:self.neighbor_num]))
-        return torch.LongTensor(active_samples), torch.LongTensor(inactive_samples)
 
-    def get_user_similarity_matrix(self):
-
-        user_ids = sorted(self.user_pool)
-        user_id_to_index = {user_id: idx for idx, user_id in enumerate(user_ids)}
-
-        similarity_matrix = np.zeros((len(user_ids), len(user_ids)))
-
-        for i, user_1 in enumerate(user_ids):
-            for j in range(i, len(user_ids)):
-                user_2 = user_ids[j]
-
-                items_1 = self.all_interactions.get(user_1, set())
-                items_2 = self.all_interactions.get(user_2, set())
-
-                common_items = items_1 & items_2
-                common_item_count = len(common_items)
-
-                similarity_matrix[i, j] = common_item_count
-                similarity_matrix[j, i] = common_item_count
-
-        return similarity_matrix
 
 
 class MyDataSet(Dataset):
