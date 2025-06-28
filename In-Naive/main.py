@@ -325,9 +325,6 @@ model_class = model_dic[args.model]
 
 model_fair = model_class(config, user_num, item_num, device=device)
 model_fair.to(device)
-# model_list = [original, S-DRO, UFR, In-UCDS, In-Naive]
-
-
 
 bce_loss = torch.nn.BCELoss()
 my_loss = myLoss(l2=L2)
