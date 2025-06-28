@@ -27,7 +27,7 @@ parser.add_argument('--no-cuda', action='store_true', default=False, help='禁�
 parser.add_argument('--seed', type=int, default=10, help='随机种子')
 parser.add_argument('--epochs', type=int, default=100, help='训练轮次')
 parser.add_argument('--model', type=str, default="NeuMF", help="评估的模型")
-parser.add_argument('--cuda-index', type=int, default=1, help='使用的GPU索引')
+parser.add_argument('--cuda-index', type=int, default=0, help='使用的GPU索引')
 parser.add_argument('--dataset', type=str, default="MovieLens", help='使用的数据集')
 parser.add_argument('--split', type=str, default="count", help='划分活跃/不活跃用户的方法')
 parser.add_argument('--random-seed', type=int, default=42, help="程序随机种子")

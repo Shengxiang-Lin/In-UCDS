@@ -16,7 +16,7 @@ class myDatasetNew():
         self.dataset_dir = "sigDatasets"
         self.dataset_name = dataset
         self.dataset_path = os.path.join(self.dataset_dir, self.dataset_name)
-        self.group_path = os.path.join(self.dataset_path, "users")
+        self.group_path = os.path.join(self.dataset_path, "groups/users/005")
         # train tune test set  [[users], [items], [ratings]]
         # train tune test dict {user:[items]}
         print(f"Load train, tune, test set...")
@@ -330,5 +330,3 @@ if __name__ == '__main__':
     # plt.grid(axis="y")
     plt.savefig("./result/introduction-norm.png", dpi=300, bbox_inches='tight')
     plt.show()
-
-

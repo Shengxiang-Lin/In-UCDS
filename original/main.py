@@ -40,7 +40,7 @@ parser.add_argument('--no-cuda', action='store_true', default=False, help='Disab
 parser.add_argument('--seed', type=int, default=10, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to train.')
 parser.add_argument('--model', type=str, default="NeuMF", help="The trained model")
-parser.add_argument('--cuda-index', type=int, default=1, help='train in which GPU')
+parser.add_argument('--cuda-index', type=int, default=0, help='train in which GPU')
 parser.add_argument('--dataset', type=str, default="MovieLens", help='train in which dataset')
 parser.add_argument('--split', type=str, default="count", help='how to split active users and inactive users')
 parser.add_argument('--random-seed', type=int, default=42, help="The random seed of this program")
@@ -267,7 +267,7 @@ print("made the log directory", log)
 
 result_dir = os.path.join("result", args.dataset)
 if not os.path.exists(result_dir):
-    os.mkdir(result_dir)
+    os.makedirs(result_dir,exist_ok=True)
 result_dir = os.path.join(result_dir, args.model)
 if not os.path.exists(result_dir):
     os.mkdir(result_dir)
