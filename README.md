@@ -19,7 +19,7 @@ MM '23: Proceedings of the 31st ACM International Conference on Multimedia
 
 ## Model Folders
 The model folders include `S-DRO`, `In-Naive`, `In-UCDS`, `UFR`, and `original`, each of which implements different recommendation models and fairness treatments. 
-### `S-DRO` folder 
+### `S-DRO`   
 This folder implements the S-DRO method for solving fairness problems in recommender systems.
 - `config.py` : configuration file, used to set various parameters for model training, such as random seed, number of training rounds, dataset, etc.
 - `main.py`: the main program file, which contains the training, tuning and testing logic of the model. In the testing phase, the optimal model parameters are loaded, the overall, active and inactive users are evaluated, and the user fairness metric (UGF) is calculated.
@@ -30,7 +30,7 @@ This folder implements the S-DRO method for solving fairness problems in recomme
 - `myloss.py`: customized loss function file to compute the loss of the model.
 - `sigdatasets.py`: dataset processing file, responsible for loading and processing datasets.
 
-### `In-Naive` folder 
+### `In-Naive`    
 This folder implements a simple fairness treatment that may be used as a baseline model for comparison.
 - `config.py` : the same configuration file as in `S-DRO` that sets the model training parameters.
 - `main.py` : main program file containing the training, tuning and testing logic for the model. The testing phase is similar to `S-DRO` and evaluates the performance and fairness of the model on different user groups.
@@ -38,7 +38,7 @@ This folder implements a simple fairness treatment that may be used as a baselin
 - `myloss.py`: custom loss function file.
 - `sigdatasets.py` : dataset processing file.
 
-### `In-UCDS` folder 
+### `In-UCDS`      
 This folder implements the In-UCDS (In-processing User-Centric Disparity Smoothing) framework for solving the problem of user-oriented fairness in recommender systems.
 - `config.py`: configuration file that sets the training parameters for the In-UCDS framework.
 - `main.py`: main program file, responsible for the training of the In-UCDS framework. During the testing phase, the parameters of both the original and fair models are loaded to compare the performance and fairness of both on overall, active and inactive users.
@@ -48,7 +48,7 @@ This folder implements the In-UCDS (In-processing User-Centric Disparity Smoothi
 - `test.py`: test program file for evaluating the performance of the trained model. Similar to the test logic in `main.py`, but can be run separately.
 - `ucds.py` : the core code that implements the In-UCDS framework, including the UCDS modeling phase and the in-processing training phase.
 
-### `UFR` folder 
+### `UFR`    
 This folder implements the UFR (User Fairness Regularization) model, which improves the fairness of the recommender system by regularizing terms.
 - `UFR.py` : Code file that implements the UFR model.
 - `config.py` : configuration file to set the training parameters for the UFR model.
@@ -59,7 +59,7 @@ This folder implements the UFR (User Fairness Regularization) model, which impro
 - `sigdatasets.py`: dataset processing file.
 - `utils/`: folder where some utility functions are stored.
 
-### `original` folder 
+### `original`   
 This folder implements the original recommendation model, regardless of fairness issues, and serves as a baseline model for comparison.
 - `config.py` : configuration file to set training parameters for the original model.
 - `main.py`: the main program file, containing the training, tuning and testing logic for the original model. The testing phase evaluates the performance of the original model on different user groups.
